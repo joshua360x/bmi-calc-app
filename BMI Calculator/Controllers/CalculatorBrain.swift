@@ -15,7 +15,7 @@ struct CalculatorBrain {
     
     
     
-    var bmiGlobal = "0.0"
+    var bmiGlobal: Float?
 
  
     
@@ -23,12 +23,13 @@ struct CalculatorBrain {
     
     mutating func calculateBMI(height: Float, weight: Float) {
         let bmi = round(((weight / (height*height)) * 10) / 10)
-            bmiGlobal = String(bmi)
+        bmiGlobal = bmi
+         
         
     }
     
-    func getBMIValue() -> String {
-        return bmiGlobal
+    func getBMIValue() -> Float {
+        return bmiGlobal ?? 0.0
     }
     
     
